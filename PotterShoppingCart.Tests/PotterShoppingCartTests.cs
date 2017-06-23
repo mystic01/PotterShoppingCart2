@@ -25,5 +25,23 @@ namespace PotterShoppingCart.Tests
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod()]
+        public void CalculateTotalPriceTest_第一集1本_第二集1本_預計回傳190()
+        {
+            //Arrange
+            var books = new Dictionary<string, int>()
+            {
+                { "哈利波特_1", 1},
+                { "哈利波特_2", 1}
+            };
+            var expected = 190;
+
+            //Act
+            var actual = PotterShoppingCart.CalculateTotalPrice(books);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
