@@ -10,10 +10,14 @@ namespace PotterShoppingCart.Tests
         public static int CalculateTotalPrice(Dictionary<string, int> books)
         {
             const int bookPrice = 100;
-            if (books.Count <= 1)
-                return bookPrice * books.Count;
-            else
-                return (int) (bookPrice * books.Count * 0.95);
+            var discount = 0.0;
+
+            if (books.Count == 2)
+                discount = 0.05;
+            else if (books.Count >= 3)
+                discount = 0.1;
+
+            return (int) (bookPrice * books.Count * (1-discount));
         }
     }
 }
