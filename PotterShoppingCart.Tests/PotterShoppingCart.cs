@@ -16,8 +16,10 @@ namespace PotterShoppingCart.Tests
                 discount = 0.05;
             else if (books.Count == 3)
                 discount = 0.1;
-            else if (books.Count >= 4)
+            else if (books.Count == 4)
                 discount = 0.2;
+            else if (books.Count >= 5)
+                discount = 0.25;
 
             return (int) (bookPrice * books.Count * (1-discount));
         }
